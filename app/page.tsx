@@ -1,95 +1,41 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import "./page.css";
+import FelipeLogo from "./assets/felipe.svg";
+import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi"
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+    <main className="main">
+      <header className="header">
+        <p>Olá! Me chamo</p>
+        <img className="logo" src={FelipeLogo.src} alt="felipe"/>
+        <p className="presentations">
+          Estudante de <br />
+          Engenharia de Software
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      </header>
+      
+      <nav className="menu">
+        <a className="button btn-filled" href="#about">Sobre mim</a>
+        <a className="button btn-filled" href="#">Veja meus projetos</a>
+        <a className="button btn-filled" href="#">Entre em contato</a>
+      </nav>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="links">
+        <h6>Links</h6>
+        <a href="#" className="button"><span className="btn-outline"><BiLogoLinkedin /></span>Linkedin</a>
+        <a href="#" className="button"><span className="btn-outline"><BiLogoGithub /></span>Github</a>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <section id="about" className="about">
+        <h2>Sobre mim</h2>
+        <p>Estudo software para a criação de soluções dinámicas, escaláveis e de fácil manutenção.</p>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <hr className="separator" />
+      
+      <footer className="footer">
+        Design e front feito por mim XD.
+      </footer>
     </main>
   )
 }
