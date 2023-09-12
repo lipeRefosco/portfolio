@@ -27,12 +27,6 @@
     text-align: center;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
 .separator {
     width: 100%;
     opacity: 30%;
@@ -54,7 +48,7 @@
     background-size: 200%;
     background-position-x: left;
     transition: background-position 100ms linear;
-    border-radius: var(--around-corners);
+    border-radius: var(--around-corners-15);
 }
 
 .btn-filled:hover {
@@ -71,7 +65,7 @@
         linear-gradient(var(--white-color), var(--white-color)) padding-box,
         linear-gradient(135deg, var(--primary-color) 40%, var(--secondary-color) 60%) border-box;
     border: 2px solid transparent;
-    border-radius: 100%;
+    border-radius: var(--around-corners-15);
 }
 
 .menu {
@@ -89,6 +83,36 @@
 .links {
     display: flex;
     flex-direction: column;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 10px;
+}
+
+.project-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: var(--around-corners-10);
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100px;
+    background-color: #d9d9d9;
+}
+
+.project-infos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 .footer {

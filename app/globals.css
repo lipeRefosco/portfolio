@@ -5,7 +5,8 @@
   --primary-color: #00FFCC;
   --secondary-color: #00B4DC;
   --complement-color: #00DCCA;
-  --around-corners: 15px;
+  --around-corners-15: 15px;
+  --around-corners-10: 10px;
   --big-font-size: 24px;
   --normal-xx-font-size: 18px;
   --normal-font-size: 16px;
@@ -82,4 +83,4 @@ body::before {
   left: 0;
   top: 0;
   background-image: url(./assets/noise-50percent.png);
-  }
+}

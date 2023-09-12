@@ -20,15 +20,29 @@ export default function Home() {
         <a className="button btn-filled" href="#">Entre em contato</a>
       </nav>
 
-      <section className="links">
+      <section className="sections links">
         <h6>Links</h6>
         <a href="#" className="button"><span className="btn-outline"><BiLogoLinkedin /></span>Linkedin</a>
         <a href="#" className="button"><span className="btn-outline"><BiLogoGithub /></span>Github</a>
       </section>
 
-      <section id="about" className="about">
+      <section id="about" className="section">
         <h2>Sobre mim</h2>
         <p>Estudo software para a criação de soluções dinámicas, escaláveis e de fácil manutenção.</p>
+      </section>
+
+      <section id="projects" className="section">
+        <h2>Projetos</h2>
+        <div className="project-card">
+          <div className="project-image">
+            
+          </div>
+          <div className="project-infos">
+            <h3>Project #1 name</h3>
+            <p>Descrição curta do projeto</p>
+            <a href="#" className="button btn-outline">Mais detalhes</a>
+          </div>
+        </div>
       </section>
 
       <hr className="separator" />
