@@ -1,0 +1,33 @@
+.button {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+.btn-filled {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(135deg, var(--primary-color) 20%, var(--secondary-color) 60%);
+    background-size: 200%;
+    background-position-x: left;
+    transition: background-position 100ms linear;
+    border-radius: var(--around-corners-15);
+}
+
+.btn-filled:hover {
+    background-position-x: right;
+    text-decoration: none;
+}
+
+.btn-outline {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(var(--white-color), var(--white-color)) padding-box,
+        linear-gradient(135deg, var(--primary-color) 40%, var(--secondary-color) 60%) border-box;
+    border: 2px solid transparent;
+    border-radius: var(--around-corners-15);
+}

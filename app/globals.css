@@ -1,7 +1,8 @@
 :root {
   /* Stylish */
   --white-color: #EFEFEF;
-  --black-color: #00261F;
+  --black-color: #00261f;
+  --black-shadow: rgba(0, 38, 31, .2);
   --primary-color: #00FFCC;
   --secondary-color: #00B4DC;
   --complement-color: #00DCCA;
@@ -11,11 +12,13 @@
   --normal-xx-font-size: 18px;
   --normal-font-size: 16px;
   --small-font-size: 12px;
+  --transitions-time: 250ms;
 
   /* Button */
   /* --btn-gradient: linear-gradient */
 
   /* Structure */
+  --xsmall-row-gap: 5px;
   --small-row-gap: 15px;
   --bigger-row-gap: 35px;
 }
@@ -83,4 +86,12 @@ body::before {
   left: 0;
   top: 0;
   background-image: url(./assets/noise-50percent.png);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }

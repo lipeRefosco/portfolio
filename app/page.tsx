@@ -1,52 +1,68 @@
 import "./page.css";
-import FelipeLogo from "./assets/felipe.svg";
-import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi"
+import Menu from "./Componenets/Menu";
+import MenuButton from "./Componenets/MenuButton";
+import SectionLinks from "./Componenets/SectionLinks";
+import Link from "./Componenets/Link";
+import Button from "./Componenets/Button";
+import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
+import Section from "./Componenets/Section";
+import ProjectCard from "./Componenets/ProjectCard";
+import Separator from "./Componenets/Separator";
+import Header from "./Componenets/Header";
+import Logo from "./Componenets/Logo";
 
 export default function Home() {
   return (
     <main className="main">
-      <header className="header">
+      <Header>
         <p>Olá! Me chamo</p>
-        <img className="logo" src={FelipeLogo.src} alt="felipe"/>
+        <Logo />
         <p className="presentations">
           Estudante de <br />
           Engenharia de Software
         </p>
-      </header>
-      
-      <nav className="menu">
-        <a className="button btn-filled" href="#about">Sobre mim</a>
-        <a className="button btn-filled" href="#">Veja meus projetos</a>
-        <a className="button btn-filled" href="#">Entre em contato</a>
-      </nav>
+      </Header>
 
-      <section className="sections links">
+      <Menu>
+        <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
+        <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
+        <Link href="#about"><MenuButton>Entre em contato</MenuButton></Link>
+      </Menu>
+
+      <SectionLinks>
         <h6>Links</h6>
-        <a href="#" className="button"><span className="btn-outline"><BiLogoLinkedin /></span>Linkedin</a>
-        <a href="#" className="button"><span className="btn-outline"><BiLogoGithub /></span>Github</a>
-      </section>
 
-      <section id="about" className="section">
+        <Link href="#">
+          <Button outlined={true}>
+            <BiLogoLinkedin />
+          </Button>
+          Linkedin
+        </Link>
+
+        <Link href="#">
+          <Button outlined={true}>
+            <BiLogoGithub />
+          </Button>
+          Github
+        </Link>
+      </SectionLinks>
+
+      <Section id="about">
         <h2>Sobre mim</h2>
         <p>Estudo software para a criação de soluções dinámicas, escaláveis e de fácil manutenção.</p>
-      </section>
+      </Section>
 
-      <section id="projects" className="section">
+      <Section id="projects">
         <h2>Projetos</h2>
-        <div className="project-card">
-          <div className="project-image">
-            
-          </div>
-          <div className="project-infos">
-            <h3>Project #1 name</h3>
-            <p>Descrição curta do projeto</p>
-            <a href="#" className="button btn-outline">Mais detalhes</a>
-          </div>
-        </div>
-      </section>
+        <ProjectCard
+          img={"https://gcdnb.pbrd.co/images/59uAUzKvgdTY.png?o=1"}
+          name={"Project #1 name"}
+          description={"Descrição curta do projeto"}
+          projectPageURL={"#"} />
+      </Section>
 
-      <hr className="separator" />
-      
+      <Separator />
+
       <footer className="footer">
         Design e front feito por mim XD.
       </footer>
