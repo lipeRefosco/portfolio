@@ -10,6 +10,9 @@ import ProjectCard from "./Componenets/ProjectCard";
 import Separator from "./Componenets/Separator";
 import Header from "./Componenets/Header";
 import Logo from "./Componenets/Logo";
+import {Heading, Headings} from "./Componenets/Headings";
+import { TextAlign } from "./Aligns";
+import Footer from "./Componenets/Footer";
 
 export default function Home() {
   return (
@@ -30,7 +33,7 @@ export default function Home() {
       </Menu>
 
       <SectionLinks>
-        <h6>Links</h6>
+        <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
 
         <Link href="#">
           <Button outlined={true}>
@@ -48,12 +51,12 @@ export default function Home() {
       </SectionLinks>
 
       <Section id="about">
-        <h2>Sobre mim</h2>
+        <Heading heading={Headings.h2} align={TextAlign.left}>Sobre mim</Heading>
         <p>Estudo software para a criação de soluções dinámicas, escaláveis e de fácil manutenção.</p>
       </Section>
 
       <Section id="projects">
-        <h2>Projetos</h2>
+        <Heading heading={Headings.h2} align={TextAlign.left}>Projetos</Heading>
         <ProjectCard
           img={"https://gcdnb.pbrd.co/images/59uAUzKvgdTY.png?o=1"}
           name={"Project #1 name"}
@@ -63,9 +66,9 @@ export default function Home() {
 
       <Separator />
 
-      <footer className="footer">
+      <Footer>
         Design e front feito por mim XD.
-      </footer>
+      </Footer>
     </main>
   )
 }
