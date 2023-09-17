@@ -1,8 +1,4 @@
 .button {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    gap: 5px;
     padding: 5px 10px;
 }
 
@@ -23,7 +19,6 @@
 .btn-outline {
     padding: 5px;
     display: flex;
-    align-items: center;
     justify-content: center;
     background:
         linear-gradient(var(--white-color), var(--white-color)) padding-box,

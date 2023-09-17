@@ -1,0 +1,10 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--small-row-gap);
+}
+
+.form .button {
+    height: var(--max-input-height);
+}

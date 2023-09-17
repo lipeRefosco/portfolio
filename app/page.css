@@ -12,10 +12,6 @@
     gap: var(--bigger-row-gap);
 }
 
-.presentations {
-    text-align: center;
-}
-
 .footer {
     font-size: var(--small-font-size);
 }

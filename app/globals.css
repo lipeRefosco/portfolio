@@ -1,7 +1,9 @@
 :root {
   /* Stylish */
+  --background-texture: url(./assets/noise-50percent.png);
   --white-color: #EFEFEF;
   --black-color: #00261f;
+  --gray-color: #AAAAAA;
   --black-shadow: rgba(0, 38, 31, .2);
   --primary-color: #00FFCC;
   --secondary-color: #00B4DC;
@@ -13,14 +15,10 @@
   --normal-font-size: 16px;
   --small-font-size: 12px;
   --transitions-time: 250ms;
-
-  /* Button */
-  /* --btn-gradient: linear-gradient */
-
-  /* Structure */
   --xsmall-row-gap: 5px;
   --small-row-gap: 15px;
   --bigger-row-gap: 35px;
+  --max-input-height: 49px;
 }
 
 @font-face {
@@ -64,7 +62,7 @@ body {
     );
   background-position: center;
   background-size: 200%;
-  font-family: "Roboto Light";
+  font-family: "Roboto Light", Arial, Helvetica, sans-serif;
   font-size: var(--normal-font-size);
   text-align: center;
   color: var(--black-color);
@@ -74,6 +72,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   width: 100%;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 @media screen and (min-width: 1200px) {

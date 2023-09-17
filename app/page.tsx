@@ -1,18 +1,22 @@
 import "./page.css";
-import Menu from "./Componenets/Menu";
-import MenuButton from "./Componenets/MenuButton";
-import SectionLinks from "./Componenets/SectionLinks";
-import Link from "./Componenets/Link";
-import Button from "./Componenets/Button";
-import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
-import Section from "./Componenets/Section";
-import ProjectCard from "./Componenets/ProjectCard";
-import Separator from "./Componenets/Separator";
 import Header from "./Componenets/Header";
 import Logo from "./Componenets/Logo";
-import {Heading, Headings} from "./Componenets/Headings";
+import Menu from "./Componenets/Menu";
+import MenuButton from "./Componenets/MenuButton";
+import Link from "./Componenets/Link";
+import Button from "./Componenets/Button";
+import Section from "./Componenets/Section";
+import SectionLinks from "./Componenets/SectionLinks";
+import ProjectCard from "./Componenets/ProjectCard";
+import Separator from "./Componenets/Separator";
+import { Heading, Headings } from "./Componenets/Headings";
 import { TextAlign } from "./Aligns";
 import Footer from "./Componenets/Footer";
+import Form from "./Componenets/Form";
+import Input from "./Componenets/Input";
+import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
+import Checkbox from "./Componenets/Checkbox";
+
 
 export default function Home() {
   return (
@@ -20,7 +24,7 @@ export default function Home() {
       <Header>
         <p>Olá! Me chamo</p>
         <Logo />
-        <p className="presentations">
+        <p>
           Estudante de <br />
           Engenharia de Software
         </p>
@@ -29,7 +33,7 @@ export default function Home() {
       <Menu>
         <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
         <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
-        <Link href="#about"><MenuButton>Entre em contato</MenuButton></Link>
+        <Link href="#contact"><MenuButton>Entre em contato</MenuButton></Link>
       </Menu>
 
       <SectionLinks>
@@ -62,6 +66,17 @@ export default function Home() {
           name={"Project #1 name"}
           description={"Descrição curta do projeto"}
           projectPageURL={"#"} />
+      </Section>
+
+      <Section id="contact">
+        <Heading heading={Headings.h2} align={TextAlign.center}>Oi recruter!</Heading>
+        <p>Preencha o formulário para baixar o meu currículo.</p>
+        <Form>
+          <Input type="text" id="nome" label="Nome:" />
+          <Input type="email" id="email" label="E-mail:" />
+          <Checkbox id="termos" text="Aceita os termos blabla ..."/>
+          <Button filled={true}>Baixar currículo</Button>
+        </Form>
       </Section>
 
       <Separator />
