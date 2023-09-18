@@ -8,6 +8,7 @@
   --primary-color: #00FFCC;
   --secondary-color: #00B4DC;
   --complement-color: #00DCCA;
+  --invalid-color: red;
   --around-corners-15: 15px;
   --around-corners-10: 10px;
   --big-font-size: 24px;

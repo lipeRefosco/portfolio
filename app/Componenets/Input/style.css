@@ -18,8 +18,24 @@
     font-size: 1rem;
 }
 
-.label input.invalid {
-    outline-color: red;
+.label.valid {
+    & input {
+        outline-color: var(--complement-color);
+    }
+
+    & .placeholder {
+        color: var(--complement-color)
+    }
+}
+
+.label.invalid {
+    & input {
+        outline-color: var(--invalid-color);
+    }
+
+    & .placeholder {
+        color: var(--invalid-color)
+    }
 }
 
 .label .placeholder {

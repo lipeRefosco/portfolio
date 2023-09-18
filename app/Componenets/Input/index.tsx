@@ -14,47 +14,59 @@ export default function Input({
 	label
 }: IInput) {
 
-	const [value, setValue] = useState<string>();
+	const [value, setValue] = useState<string>('');
 	const [isFocus, setFocus] = useState<boolean>(false);
-	const [isValid, setValid] = useState<boolean>(false)
+	const [isValid, setValid] = useState<boolean>(false);
+	const [isInvalid, setInvalid] = useState<boolean>(false);
 
-	const handleInputFocus = (e: any) => {
+	const handleInputFocus = (e: any): void => {
 		const inputValue = e.target.value;
 
-		if(!inputValue) {
+		if (!inputValue) {
 			setFocus(false);
 			return;
 		}
 
-		setFocus(true);
+		setFocus(true)
+		return;
 	}
 
-	const handleInputValue = (e: any) => {
-		handleInputFocus(e)
-		setValue(e.target.value)
-	}
+	const handleValidationStyle = (e: any): void => {
+		if(e.target.value.length === 0) {
+			setValid(false);
+			setInvalid(false);
+			return;
+		}
 
-	const handleInputEmail = (e: any) => {
-		handleInputValue(e);
-		const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-		
-		if(!re.test(e.target.value)) {
-			setValid(true);
-			return
+		if (e.target.value.length <= 2) {
+			setValid(false);
+			setInvalid(true);
+			return;
 		}
 
 		setValid(true);
+		setInvalid(false);
+		return;
+	}
+
+	const handleInputValue = (e: any) => {
+		handleInputFocus(e);
+		setValue(e.target.value);
+		handleValidationStyle(e);
 	}
 
 	return (
-		<label className="label" htmlFor={id}>
+		<label className={`label
+		${isValid ? 'valid' : ''}
+		${isInvalid ? 'invalid' : ''}
+		`} htmlFor={id}>
 			<input
 				type={type}
 				name={id}
 				id={id}
 				onFocus={handleInputFocus}
-				onBlur={handleInputValue}
-				onChange={handleInputValue}
+				onBlur={handleInputFocus}
+				onChangeCapture={handleInputValue}
 				value={value} />
 			{label ? <span className="placeholder" data-focus={isFocus}>{label}</span> : ''}
 		</label>
