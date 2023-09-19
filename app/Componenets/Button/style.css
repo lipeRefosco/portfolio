@@ -1,5 +1,11 @@
 .button {
     padding: 5px 10px;
+    transition: filter var(--transitions-time) linear;
+}
+
+.button:disabled {
+    filter: grayscale(1);
+    color:white;
 }
 
 .btn-filled {

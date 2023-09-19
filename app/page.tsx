@@ -12,10 +12,11 @@ import Separator from "./Componenets/Separator";
 import { Heading, Headings } from "./Componenets/Headings";
 import { TextAlign } from "./Aligns";
 import Footer from "./Componenets/Footer";
-import Form from "./Componenets/Form";
 import Input from "./Componenets/Input";
+import Form from "./Componenets/Form";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
 import Checkbox from "./Componenets/Checkbox";
+import SectionContact from "./Componenets/SectionContact";
 
 
 export default function Home() {
@@ -68,16 +69,7 @@ export default function Home() {
           projectPageURL={"#"} />
       </Section>
 
-      <Section id="contact">
-        <Heading heading={Headings.h2} align={TextAlign.center}>Oi recruter!</Heading>
-        <p>Preencha o formulário para baixar o meu currículo.</p>
-        <Form>
-          <Input type="text" id="nome" label="Nome:" />
-          <Input type="email" id="email" label="E-mail:" />
-          <Checkbox id="termos" text="Aceita os termos blabla ..."/>
-          <Button filled={true}>Baixar currículo</Button>
-        </Form>
-      </Section>
+      <SectionContact />
 
       <Separator />
 
