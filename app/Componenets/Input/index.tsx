@@ -66,7 +66,7 @@ export default function Input({
 				id={id}
 				onFocus={handleInputFocus}
 				onBlur={handleInputFocus}
-				onChangeCapture={handleInputValue}
+				onChange={handleInputValue}
 				value={value} />
 			{label ? <span className="placeholder" data-focus={isFocus}>{label}</span> : ''}
 		</label>
