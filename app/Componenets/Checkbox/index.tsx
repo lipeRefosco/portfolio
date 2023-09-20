@@ -1,6 +1,4 @@
 "use client";
-
-import { ChangeEventHandler, Dispatch, SetStateAction, useState } from "react";
 import "./style.css"
 
 interface ICheckbox {
