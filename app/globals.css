@@ -52,6 +52,10 @@ a:hover {
   text-decoration: underline;
 }
 
+html {
+  scroll-behavior: smooth
+}
+
 body {
   background-color: var(--white-color);
   background-image: linear-gradient(
