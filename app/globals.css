@@ -65,7 +65,7 @@ body {
   background-size: 200%;
   font-family: "Roboto Light", Arial, Helvetica, sans-serif;
   font-size: var(--normal-font-size);
-  text-align: center;
+  text-align: left;
   color: var(--black-color);
   position: relative;
   transition: background-size 1s linear;
