@@ -15,40 +15,46 @@ import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
 import SectionContact from "./Componenets/SectionContact";
 
 
+const headerSectionStyle = {
+  justifyContent: 'center',
+  gap: '3rem'
+}
+
 export default function Home() {
   return (
     <main className="main">
       <Header>
-        <Section>
-          <p>Olá! Me chamo</p>
-          <Logo />
-          <p>Estudante de <br />Engenharia de Software</p>
+        <Section style={headerSectionStyle}>
+          <div>
+            <p>Olá! Me chamo</p>
+            <Logo />
+            <p>Estudante de <br />Engenharia de Software</p>
+          </div>
+
+          <Menu>
+            <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
+            <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
+            <Link href="#contact"><MenuButton>Entre em contato</MenuButton></Link>
+          </Menu>
+
+          <div>
+            <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
+
+            <Link href="#">
+              <Button outlined={true}>
+                <BiLogoLinkedin />
+              </Button>
+              Linkedin
+            </Link>
+
+            <Link href="#">
+              <Button outlined={true}>
+                <BiLogoGithub />
+              </Button>
+              Github
+            </Link>
+          </div>
         </Section>
-
-        <Menu>
-          <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
-          <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
-          <Link href="#contact"><MenuButton>Entre em contato</MenuButton></Link>
-        </Menu>
-
-        <Section>
-          <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
-
-          <Link href="#">
-            <Button outlined={true}>
-              <BiLogoLinkedin />
-            </Button>
-            Linkedin
-          </Link>
-
-          <Link href="#">
-            <Button outlined={true}>
-              <BiLogoGithub />
-            </Button>
-            Github
-          </Link>
-        </Section>
-
       </Header>
 
       <Section id="about">
