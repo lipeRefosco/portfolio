@@ -1,18 +1,18 @@
 import "./page.css";
-import Header from "./Componenets/Header";
-import Logo from "./Componenets/Logo";
-import Menu from "./Componenets/Menu";
-import MenuButton from "./Componenets/MenuButton";
-import Link from "./Componenets/Link";
-import Button from "./Componenets/Button";
-import Section from "./Componenets/Section";
-import ProjectCard from "./Componenets/ProjectCard";
-import Separator from "./Componenets/Separator";
-import { Heading, Headings } from "./Componenets/Headings";
+import Header from "./Components/Header";
+import Logo from "./Components/Logo";
+import Menu from "./Components/Menu";
+import MenuButton from "./Components/MenuButton";
+import Link from "./Components/Link";
+import Button from "./Components/Button";
+import Section from "./Components/Section";
+import ProjectCard from "./Components/ProjectCard";
+import Separator from "./Components/Separator";
+import { Heading, Headings } from "./Components/Headings";
 import { TextAlign } from "./Aligns";
-import Footer from "./Componenets/Footer";
+import Footer from "./Components/Footer";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
-import SectionContact from "./Componenets/SectionContact";
+import SectionContact from "./Components/SectionContact";
 
 
 const headerSectionStyle = {
