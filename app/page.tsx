@@ -12,10 +12,7 @@ import Separator from "./Componenets/Separator";
 import { Heading, Headings } from "./Componenets/Headings";
 import { TextAlign } from "./Aligns";
 import Footer from "./Componenets/Footer";
-import Input from "./Componenets/Input";
-import Form from "./Componenets/Form";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
-import Checkbox from "./Componenets/Checkbox";
 import SectionContact from "./Componenets/SectionContact";
 
 
