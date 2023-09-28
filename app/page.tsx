@@ -6,7 +6,6 @@ import MenuButton from "./Componenets/MenuButton";
 import Link from "./Componenets/Link";
 import Button from "./Componenets/Button";
 import Section from "./Componenets/Section";
-import SectionLinks from "./Componenets/SectionLinks";
 import ProjectCard from "./Componenets/ProjectCard";
 import Separator from "./Componenets/Separator";
 import { Heading, Headings } from "./Componenets/Headings";
@@ -20,37 +19,37 @@ export default function Home() {
   return (
     <main className="main">
       <Header>
-        <p>Olá! Me chamo</p>
-        <Logo />
-        <p>
-          Estudante de <br />
-          Engenharia de Software
-        </p>
+        <Section>
+          <p>Olá! Me chamo</p>
+          <Logo />
+          <p>Estudante de <br />Engenharia de Software</p>
+        </Section>
+
+        <Menu>
+          <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
+          <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
+          <Link href="#contact"><MenuButton>Entre em contato</MenuButton></Link>
+        </Menu>
+
+        <Section>
+          <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
+
+          <Link href="#">
+            <Button outlined={true}>
+              <BiLogoLinkedin />
+            </Button>
+            Linkedin
+          </Link>
+
+          <Link href="#">
+            <Button outlined={true}>
+              <BiLogoGithub />
+            </Button>
+            Github
+          </Link>
+        </Section>
+
       </Header>
-
-      <Menu>
-        <Link href="#about"><MenuButton>Sobre mim</MenuButton></Link>
-        <Link href="#projects"><MenuButton>Veja meus projetos</MenuButton></Link>
-        <Link href="#contact"><MenuButton>Entre em contato</MenuButton></Link>
-      </Menu>
-
-      <SectionLinks>
-        <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
-
-        <Link href="#">
-          <Button outlined={true}>
-            <BiLogoLinkedin />
-          </Button>
-          Linkedin
-        </Link>
-
-        <Link href="#">
-          <Button outlined={true}>
-            <BiLogoGithub />
-          </Button>
-          Github
-        </Link>
-      </SectionLinks>
 
       <Section id="about">
         <Heading heading={Headings.h2} align={TextAlign.left}>Sobre mim</Heading>
