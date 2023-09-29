@@ -41,14 +41,14 @@ export default function Home() {
             <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
 
             <Link href="#">
-              <Button outlined={true}>
+              <Button disabled={false} filled={false}>
                 <BiLogoLinkedin />
               </Button>
               Linkedin
             </Link>
 
             <Link href="#">
-              <Button outlined={true}>
+              <Button disabled={false} filled={false}>
                 <BiLogoGithub />
               </Button>
               Github

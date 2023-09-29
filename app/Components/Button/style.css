@@ -1,11 +1,16 @@
 button {
     padding: 5px 10px;
-    transition: filter var(--transitions-time) linear;
+    filter: grayscale(0);
+    color: var(--black-color);
+    transition-property: filter color;
+    transition-duration: var(--transitions-time);
+    transition-timing-function: linear;
 }
 
-button:disabled {
+button.disabled {
     filter: grayscale(1);
     color:white;
+    cursor: not-allowed;
 }
 
 .btn-filled {

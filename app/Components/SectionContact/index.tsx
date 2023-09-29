@@ -1,12 +1,12 @@
 "use client";
 
 import { TextAlign } from "@/app/Aligns";
+import { Heading, Headings } from "../Headings";
 import Button from "../Button";
 import Form from "../Form";
-import { Heading, Headings } from "../Headings";
 import Input from "../Input";
 import Section from "../Section";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const sectionStyle = {
 	justifyContent: 'center',
@@ -16,6 +16,9 @@ export default function SectionContact() {
 	const [isNameValid, setIsNameValid] = useState<boolean>(false);
 	const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
 	const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
+	const [isButtonReady, setIsButtonReady] = useState<boolean>(true)
+
+	const formValid = !isNameValid || !isEmailValid || !isTermsChecked;
 
 	const nameValidator = (e: any) => {
 		if (e.target.value.length < 3 || e.target.validity.tooShort) {
@@ -32,6 +35,22 @@ export default function SectionContact() {
 	const termsValidator = (e: any) => {
 		setIsTermsChecked(e.target.validity.valid);
 	}
+
+	useEffect(() => {
+		// console.log('Reseting the button of the form if JS is enabled');
+		setIsButtonReady(false)
+	}, [])
+
+	useEffect(() => {
+		// console.log('Verifying if for is ready to download my resume');
+		if(formValid) {
+			setIsButtonReady(false);
+			return;
+		}
+		
+		setIsButtonReady(true);
+	
+	}, [isNameValid, isEmailValid, isTermsChecked])
 
 	return (
 		<Section id="contact" style={sectionStyle}>
@@ -57,7 +76,7 @@ export default function SectionContact() {
 					label="Aceita os termos blbbl"
 					required={true}
 					onChangeHandler={termsValidator} />
-				<Button disabled={!isNameValid || !isEmailValid || !isTermsChecked ? true : false} filled={true}>Baixar currículo</Button>
+				<Button disabled={!isButtonReady ? true : false} filled={true}>Baixar currículo</Button>
 			</Form>
 		</Section>
 	)

@@ -5,7 +5,6 @@ interface IButton {
 	children: any,
 	type?: 'submit' | 'reset' | 'button' | undefined,
 	disabled: boolean,
-	outlined?: boolean,
 	filled?: boolean,
 	style?: CSSProperties
 }
@@ -14,20 +13,19 @@ export default function Button(
 	{
 		children,
 		type,
-		disabled,
-		outlined = false,
+		disabled = false,
 		filled = false,
 		style
-	}: IButton ) {
+	}: IButton) {
 
-	const btnIsOutlined = outlined ? 'btn-outline' : '';
-	const btnIsFilled = filled ? 'btn-filled' : ''
+	const btnDisabledStyle = disabled ? 'disabled' : '';
+	const btnFilledStyle = filled ? 'btn-filled' : 'btn-outline';
 
 	return (
 		<button
 			type={type}
 			disabled={disabled}
-			className={btnIsFilled + btnIsOutlined}
+			className={`${btnDisabledStyle} ${btnFilledStyle}`}
 			style={style ? style : {}}>
 			{children}
 		</button>
