@@ -1,71 +1,121 @@
-.label {
-    width: 100%;
+label {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--xsmall-row-gap);
 }
 
-.label input {
-    width: 100%;
-    height: var(--max-input-height);
-    padding: var(--small-row-gap);
-    border-radius: var(--around-corners-10);
-    outline: 2px solid var(--gray-color);
+label span {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition-property: left, top, padding color;
+    transition-duration: var(--transitions-time);
+    transition-timing-function: linear;
+}
+
+input {
+    /* reset */
     border: none;
     background-color: transparent;
+    appearance: none;
+
+    /* structure */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    /* style */
+    border-radius: var(--around-corners-10);
+    outline: 1px solid var(--gray-color);
     font-size: 1rem;
+    transition-property: background outline;
+    transition-duration: var(--transitions-time);
+    transition-timing-function: linear;
 }
 
-.label.valid {
-    & input {
-        outline-color: var(--complement-color);
-    }
-
-    & .placeholder {
-        color: var(--complement-color)
-    }
-}
-
-.label.invalid {
-    & input {
-        outline-color: var(--invalid-color);
-    }
-
-    & .placeholder {
-        color: var(--invalid-color)
-    }
-}
-
-.label .placeholder {
-    /* Style */
-    padding: 0 var(--xsmall-row-gap);
+input:focus~span,
+input:valid~span,
+input:not(:placeholder-shown)~span {
+    padding: 0 .3rem;
+    top: -.6rem;
+    left: .7rem;
     background: var(--white-color) var(--background-texture) center;
-    color: var(--gray-color);
-    transition:
-        top var(--transitions-time) linear,
-        font-size var(--transitions-time) linear,
-        background calc(var(--transitions-time) / 2) linear;
+}
 
-    /* Structure */
+input:valid {
+    outline-color: var(--complement-color);
+
+    &~span {
+        color: var(--complement-color);
+    }
+}
+
+input:not(:placeholder-shown):invalid {
+    outline-color: var(--invalid-color);
+
+    &~span {
+        color: var(--invalid-color);
+    }
+}
+
+input[type="checkbox"] {
+    --checkbox-width: calc(var(--max-input-height) / 3 * 2);
+    --checkbox-height: 10px;
+
+    /* reset from input */
+    padding: 0;
+    margin-right: 1rem;
+
+    /* structure */
+    appearance: none;
+    width: var(--checkbox-width);
+    height: var(--checkbox-height);
+    position: relative;
+
+    /* style */
+    background-color: var(--white-color);
+    background-image: var(--background-texture);
+    background-position: center;
+    border: 1px solid var(--white-color);
+    cursor: pointer;
+}
+
+label input[type="checkbox"]:invalid {
+    outline-color: var(--gray-color);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"]::before {
+    --thumb-height: calc(var(--max-input-height) / 2);
+
+    content: '';
+    display: block;
+    width: calc(var(--thumb-height) - 3px);
+    height: calc(var(--thumb-height) - 3px);
     position: absolute;
-    left: var(--xsmall-row-gap);
-    top: calc(var(--max-input-height) / 2);
-    display: flex;
-    align-items: center;
-    text-align: center;
+    left: 0;
+    top: calc((var(--checkbox-height) - var(--thumb-height)) / 2);
+    transform: translateX(-50%);
+
+    /* Style */
+    background-color: var(--gray-color);
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, .3);
+    border-radius: 100%;
+    transition: all var(--transitions-time) linear;
 }
 
-.label .placeholder[data-focus="true"] {
-    /* -1 is to invert */
-    --position-on-top: calc(var(--max-input-height) / 5 * -1);
-    font-size: .8rem;
-    top: var(--position-on-top);
+input[type="checkbox"]:checked::before {
+    background-color: var(--primary-color);
+    transform: translateX(100%);
 }
 
-.label .placeholder[data-focus="false"] {
-    --position-on-middle: calc(var(--max-input-height) / 3.5);
-    background: none;
-    top: var(--position-on-middle);
+label input[type="checkbox"]:invalid~span,
+label input[type="checkbox"]~span {
+    /* Input reset from  */
+    position: unset;
+    left: unset;
+    right: unset;
+    padding: unset;
+    color: inherit;
 }

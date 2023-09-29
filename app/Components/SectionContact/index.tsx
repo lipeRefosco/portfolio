@@ -2,7 +2,6 @@
 
 import { TextAlign } from "@/app/Aligns";
 import Button from "../Button";
-import Checkbox from "../Checkbox";
 import Form from "../Form";
 import { Heading, Headings } from "../Headings";
 import Input from "../Input";
@@ -14,11 +13,26 @@ const sectionStyle = {
 }
 
 export default function SectionContact() {
+	const [isNameValid, setIsNameValid] = useState<boolean>(false);
+	const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
+	const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
 
-	const [isTermsChecked, setTermsChecked] = useState<boolean>(false)
+	const nameValidator = (e: any) => {
+		if(e.target.value.length < 3) {
+			setIsNameValid(false);
+			return;
+		};
+		setIsNameValid(true);
+	}
 
-	const handleTermsChecked = () => {
-		setTermsChecked(!isTermsChecked);
+	const emailValidator = (e: any) => {
+		console.log(e.target.validity.valid);
+		setIsEmailValid(e.target.validity.valid);
+	}
+
+	const termsValidator = (e:any) => {
+		console.log(e.target.validity.valid);
+		setIsTermsChecked(e.target.validity.valid);
 	}
 
 	return (
@@ -26,10 +40,10 @@ export default function SectionContact() {
 			<Heading heading={Headings.h2} align={TextAlign.center}>Oi recruter!</Heading>
 			<p>Preencha o formulário para baixar o meu currículo.</p>
 			<Form>
-				<Input type="text" id="nome" label="Nome:" />
-				<Input type="email" id="email" label="E-mail:" />
-				<Checkbox id="termos" text="Aceita os termos blabla ..." checked={isTermsChecked} onHandleChecked={handleTermsChecked} />
-				<Button disabled={!isTermsChecked} filled={true}>Baixar currículo</Button>
+				<Input type="text" id="nome" label="Nome:" required={true} onChangeHandler={nameValidator} />
+				<Input type="email" id="email" label="E-mail:" required={true} onChangeHandler={emailValidator} />
+				<Input type="checkbox" id="terms" label="Aceita os termos blbbl" required={true} onChangeHandler={termsValidator} />
+				<Button disabled={!isNameValid || !isEmailValid || !isTermsChecked ? true : false} filled={true}>Baixar currículo</Button>
 			</Form>
 		</Section>
 	)

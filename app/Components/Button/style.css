@@ -1,9 +1,9 @@
-.button {
+button {
     padding: 5px 10px;
     transition: filter var(--transitions-time) linear;
 }
 
-.button:disabled {
+button:disabled {
     filter: grayscale(1);
     color:white;
 }

@@ -5,6 +5,6 @@
     row-gap: var(--small-row-gap);
 }
 
-.form .button {
+.form button {
     height: var(--max-input-height);
 }

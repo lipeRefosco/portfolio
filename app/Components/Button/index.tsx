@@ -3,7 +3,8 @@ import { CSSProperties } from "react"
 
 interface IButton {
 	children: any,
-	disabled?: boolean,
+	type?: 'submit' | 'reset' | 'button' | undefined,
+	disabled: boolean,
 	outlined?: boolean,
 	filled?: boolean,
 	style?: CSSProperties
@@ -12,7 +13,8 @@ interface IButton {
 export default function Button(
 	{
 		children,
-		disabled = false,
+		type,
+		disabled,
 		outlined = false,
 		filled = false,
 		style
@@ -22,7 +24,10 @@ export default function Button(
 	const btnIsFilled = filled ? 'btn-filled' : ''
 
 	return (
-		<button disabled={disabled ? true : false} className={`button ` + btnIsFilled + btnIsOutlined}
+		<button
+			type={type}
+			disabled={disabled}
+			className={btnIsFilled + btnIsOutlined}
 			style={style ? style : {}}>
 			{children}
 		</button>
