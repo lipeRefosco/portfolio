@@ -1,9 +1,8 @@
 .section {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
-    padding: 2rem 0;
+    padding: 6rem 0;
 }

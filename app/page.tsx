@@ -16,8 +16,11 @@ import SectionContact from "./Components/SectionContact";
 
 
 const headerSectionStyle = {
-  justifyContent: 'center',
   gap: '3rem'
+}
+
+const sobreSectionStyle = {
+  alignItems: 'start'
 }
 
 export default function Home() {
@@ -57,9 +60,13 @@ export default function Home() {
         </Section>
       </Header>
 
-      <Section id="about">
+      <Section id="about" style={sobreSectionStyle}>
         <Heading heading={Headings.h2} align={TextAlign.left}>Sobre mim</Heading>
-        <p>Estudo software para a criação de soluções dinámicas, escaláveis e de fácil manutenção.</p>
+        <p>Olá, tudo bem?</p>
+        <p>Sou estudante de Engenharia de Software em busca de estágio na área.</p>
+        <p>Busco aplicar meus conhecimentos em projetos desafiadores, colaborando com uma equipe dedicada e comprometida com a excelência técnica.</p>
+        <p>Meu objetivo é contribuir com soluções inovadoras enquanto aprimoro minhas habilidades práticas e adquiro experiência na indústria.</p>
+        <p>Estou pronto para enfrentar novos desafios e trazer entusiasmo e criatividade para qualquer time.</p>
       </Section>
 
       <Section id="projects">
