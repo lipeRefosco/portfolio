@@ -18,7 +18,7 @@ export default function SectionContact() {
 	const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
 	const [isButtonReady, setIsButtonReady] = useState<boolean>(true)
 
-	const formValid = !isNameValid || !isEmailValid || !isTermsChecked;
+	const formValid = isNameValid && isEmailValid && isTermsChecked;
 
 	const nameValidator = (e: any) => {
 		if (e.target.value.length < 3 || e.target.validity.tooShort) {
@@ -43,7 +43,7 @@ export default function SectionContact() {
 
 	useEffect(() => {
 		// console.log('Verifying if for is ready to download my resume');
-		if(formValid) {
+		if(!formValid) {
 			setIsButtonReady(false);
 			return;
 		}
