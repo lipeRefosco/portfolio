@@ -13,7 +13,7 @@ export default function Button(
 	{
 		children,
 		type,
-		disabled = false,
+		disabled,
 		filled = false,
 		style
 	}: IButton) {

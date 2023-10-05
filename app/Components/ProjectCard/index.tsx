@@ -23,7 +23,7 @@ export default function ProjectCard(
 				<h3>{name}</h3>
 				<p>{description}</p>
 				<Link href={projectPageURL}>
-					<Button outlined={true}>
+					<Button disabled={false} filled={true}>
 						Mais detalhes
 					</Button>
 				</Link>
