@@ -5,5 +5,5 @@ const menuButtonStyle = {
 }
 
 export default function MenuButton({children} : {children: any}) {
-	return <Button disabled={true} style={menuButtonStyle} filled={true}>{children}</Button>
+	return <Button disabled={false} style={menuButtonStyle} filled={true}>{children}</Button>
 }
