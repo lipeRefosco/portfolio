@@ -13,7 +13,9 @@ import { TextAlign } from "./Aligns";
 import Footer from "./Components/Footer";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
 import SectionContact from "./Components/SectionContact";
-
+import Paragraph from "./Components/Paragraph";
+import { PageInfo } from "./core/dataTypes/pageInfo";
+import { getInfos } from "./utils/gettters/getInfos";
 
 const headerSectionStyle = {
   gap: '3rem'
@@ -23,7 +25,10 @@ const sobreSectionStyle = {
   alignItems: 'start'
 }
 
-export default function Home() {
+export default async function Home() {
+  const infos: PageInfo = await getInfos();
+  const noProjects: boolean = infos.projects.length < 1
+
   return (
     <main className="main">
       <Header>
@@ -43,14 +48,14 @@ export default function Home() {
           <div>
             <Heading heading={Headings.h6} align={TextAlign.center}>Links</Heading>
 
-            <Link href="#">
+            <Link href={infos.links.linkedin}>
               <Button disabled={false} filled={false}>
                 <BiLogoLinkedin />
               </Button>
               Linkedin
             </Link>
 
-            <Link href="#">
+            <Link href={infos.links.github}>
               <Button disabled={false} filled={false}>
                 <BiLogoGithub />
               </Button>
@@ -62,20 +67,19 @@ export default function Home() {
 
       <Section id="about" style={sobreSectionStyle}>
         <Heading heading={Headings.h2} align={TextAlign.left}>Sobre mim</Heading>
-        <p>Olá, tudo bem?</p>
-        <p>Sou estudante de Engenharia de Software em busca de estágio na área.</p>
-        <p>Busco aplicar meus conhecimentos em projetos desafiadores, colaborando com uma equipe dedicada e comprometida com a excelência técnica.</p>
-        <p>Meu objetivo é contribuir com soluções inovadoras enquanto aprimoro minhas habilidades práticas e adquiro experiência na indústria.</p>
-        <p>Estou pronto para enfrentar novos desafios e trazer entusiasmo e criatividade para qualquer time.</p>
+        {JSON.stringify(infos.about).replaceAll("\"", "").split('\\n').map(p => <Paragraph text={p} />)}
       </Section>
 
       <Section id="projects">
         <Heading heading={Headings.h2} align={TextAlign.left}>Projetos</Heading>
-        <ProjectCard
+        {noProjects
+          ? "Nenhum projeto cadastrado."
+          : <ProjectCard
           img={"https://gcdnb.pbrd.co/images/59uAUzKvgdTY.png?o=1"}
           name={"Project #1 name"}
           description={"Descrição curta do projeto"}
           projectPageURL={"#"} />
+        }
       </Section>
 
       <SectionContact />

@@ -1,5 +1,8 @@
 export interface PageInfo {
     about: string,
-    links: [Record<string, string>]
+    links: {
+        linkedin: string,
+        github: string
+    }
     projects: [string]
 }
