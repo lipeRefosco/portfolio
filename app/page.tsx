@@ -67,7 +67,7 @@ export default async function Home() {
 
       <Section id="about" style={sobreSectionStyle}>
         <Heading heading={Headings.h2} align={TextAlign.left}>Sobre mim</Heading>
-        {JSON.stringify(infos.about).replaceAll("\"", "").split('\\n').map(p => <Paragraph text={p} />)}
+        {JSON.stringify(infos.about).replaceAll("\"", "").split('\\n').map((p, i) => <Paragraph key={i} text={p} />)}
       </Section>
 
       <Section id="projects">
