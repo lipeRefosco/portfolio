@@ -54,7 +54,7 @@ export default function SectionContact() {
 
 	return (
 		<Section id="contact" style={sectionStyle}>
-			<Heading heading={Headings.h2} align={TextAlign.center}>Oi recruter!</Heading>
+			<Heading heading={Headings.h2} align={TextAlign.center}>Oi recruiter!</Heading>
 			<p>Preencha o formulário para baixar o meu currículo.</p>
 			<Form>
 				<Input
